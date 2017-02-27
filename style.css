@@ -1,0 +1,2393 @@
+/*
+Theme Name: Stupid Easy Paleo
+Theme URI: http://underscores.me/
+Author: Z
+Author URI: http://glasgowshipyard.com
+Description: Built from scratch for my beloved wife
+Version: 1.0-wpcom
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: stupid-easy-paleo
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Stupid Easy Paleo is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+along with Nicolas Gallagher and Jonathan Neal https://necolas.github.com/normalize.css/
+and Blueprint http://www.blueprintcss.org/
+*/
+
+/*
+------------------------ON DESIGN RUBRIC--------------------------------
+SEP Black:  #000000
+SEP Red:    #E1261C
+SEP Yellow: #F5DA0F
+SEP Cyan:   #20AFEA
+SG Coral:	#F45747
+SG Teal:	#067887
+SG Mint:	#A4EDD9
+SG Grey:	#808080;
+SG Charcoal:#404040;
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Reset
+2.0 - Typography
+3.0 - Elements
+4.0 - Forms
+5.0 - Navigation
+	5.1 - Links
+	5.2 - Menus
+6.0 - Accessibility
+7.0 - Alignments
+8.0 - Clearings
+9.0 - Widgets
+10.0 - Content
+	10.1 - Posts and pages
+	10.2 - Asides
+	10.3 - Comments
+11.0 - Infinite scroll
+12.0 - Media
+	12.1 - Captions
+	12.2 - Galleries
+13.0 - VIRUS FUCKING PLUGINS
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1.0 Reset
+--------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	overflow-y: scroll; /* Keeps page centered in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+}
+
+*,
+*:before,
+*:after { /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+	-webkit-box-sizing: border-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
+	-moz-box-sizing:    border-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
+	box-sizing:         border-box;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+
+ol,
+ul {
+	list-style: disc;
+}
+
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+
+caption,
+th,
+td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a img {
+	border: 0;
+}
+
+.screen-reader-text { /* Reusable, toolbox kind of class */
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+/*--------------------------------------------------------------
+2.0 Typography
+--------------------------------------------------------------*/
+@font-face {
+    font-family: "icomoon";
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"),
+    	 url("fonts/icomoon.woff") format("woff"), 
+    	 url("fonts/icomoon.ttf") format("truetype"), 
+    	 url("fonts/icomoon.svg#icomoon") format("svg");
+}
+
+@font-face {
+	font-family: "Mission-Script";
+	font-style: normal;
+	font-weight: normal;
+	src: url("fonts/mission-script.eot") format("embedded-opentype"),
+    	 url("fonts/mission-script.woff") format("woff"),
+    	 url("fonts/mission-script.ttf") format("truetype"),
+         url("fonts/mission-script.svg#Mission-Script") format("svg");
+}
+
+@font-face {
+	font-family: "proxima-nova";
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: "Refrigerator-deluxe";
+	font-style: normal;
+	font-weight: normal;
+}
+
+body,
+button,
+input,
+select,
+textarea, .easyrecipe {
+	color: #404040;
+    font-family: "proxima-nova",sans-serif;
+	font-size: 100%
+	font-size: 1em;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	margin-bottom: 1em;
+}
+
+h1, h2 {
+font-style: normal;
+font-family: "Refrigerator-deluxe",sans-serif;
+color: #404040;
+line-height: 1.2;
+
+}
+
+h1, .entry-title { /*<H1> REFRIGERATOR DELUXE, BOLD, 24 PT / 26 PT LEADING, ALL UPPERCASE; COLOR: SEP BLACK*/
+font-weight: bold;
+font-size: 32px;
+line-height: 1.2;
+}
+
+.entry-title { /*<H1> REFRIGERATOR DELUXE, BOLD, 24 PT / 26 PT LEADING, ALL UPPERCASE; COLOR: SEP BLACK*/
+text-transform: uppercase;
+}
+
+h2 { /* Refrigerator Deluxe, Regular, 22pt / 27pt leading; Color: SEP Black */
+font-family: "Refrigerator-deluxe",sans-serif;
+font-size: 24px;
+line-height: 1.2;
+}
+
+#foot {
+	color: #ffffff;
+}
+
+h3 { /* Proxima Nova, Semibold, 13pt / 16pt leading; Color: SEP Black */
+font-family: "proxima-nova",sans-serif;
+font-weight: 500;
+color: #404040;
+font-size: 17px;
+}
+
+h4 {
+  font-family: "Mission-Script",cursive;
+}
+
+p { /* Proxima Nova, Regular, 11pt / 16pt leading; Color: SEP Black. */
+font-family: "proxima-nova",sans-serif;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	bottom: 1ex;
+}
+
+sub {
+	top: .5ex;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+3.0 Elements
+--------------------------------------------------------------*/
+hr {
+	background-color: #666;
+	border: 0;
+	height: 1px;
+	margin: 1.5em auto;
+	width: 5%;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+/* author-bio */
+
+.author-bio {
+	clear: both;
+	padding: 1em 0;
+}
+
+.author-bio img {
+	float: left;
+	margin: 2em;
+}
+
+.author-description {
+	padding: 2em;
+}
+
+.excerpt-thumb {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    max-width:90%;
+}
+
+.even .wp-post-image {
+	float:left;
+	padding:0;
+	margin:0 20px 20px 0;
+}
+.odd .wp-post-image {
+	float:right;
+	padding:0;
+	margin:0 0 20px 20px;
+}
+
+figure {
+	margin: 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+th {
+	font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+4.0 Forms
+--------------------------------------------------------------*/
+button,
+input,
+select,
+textarea {
+	font-size: 19px; /* Corrects font size not being inherited in all browsers */ /* Sign Up! Button or highlighted text: Mission Script, Regular, 14pt; Color: SEP Red */
+	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
+	background: transparent;
+}
+
+input[type="checkbox"], input[type="radio"]:checked
+input[type="radio"], input[type="radio"]:checked {
+	padding: 0; /* Addresses excess padding in IE8/9 */
+	border: none; /* To fix rearded iOS bullshit */
+	background: none; /* To fix rearded iOS bullshit */
+}
+
+input[type="checkbox"], input[type="radio"] {
+    -webkit-appearance: none !important; /*BECAUSE I CAN'T GET IT TO WORK WITH FF / OPERA*/
+   /*-moz-appearance:    value;*/
+   /*appearance:         value;*/
+}
+
+input[type="checkbox"]#subscribe_comments, input[type="radio"]#subscribe_comments,
+input[type="checkbox"]#subscribe_blog, input[type="radio"]#subscribe_blog {
+    -webkit-appearance: none !important; /*BECAUSE I CAN'T GET IT TO WORK WITH FF / OPERA*/
+   /*-moz-appearance:    value;*/
+   /*appearance:         value;*/
+}
+
+input[type="checkbox"]:before, input[type="radio"]:before, .contact-form input[type="checkbox"]:before {
+    color: #20ADEA;
+    font-family: 'Icomoon';
+    font-size: 1rem;
+    font-size: 16px;
+    padding-right: 10px;
+    text-transform: none;
+}
+
+input[type="radio"]:before {
+  content: "\e73c"; /* Radio Button Unchecked */
+}
+
+input[type="radio"]:checked:before {
+  content: "\e73b"; /* Radio Button Checked */
+}
+
+input[type="checkbox"]:before {
+  content: "\e739"; /* Checkbox Unchecked */
+}
+
+input[type="checkbox"]:checked:before {
+  content: "\e738"; /* Checkbox Checked */
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield; /* Addresses appearance set to searchfield in S5, Chrome */
+	-webkit-box-sizing: content-box; /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+	-moz-box-sizing:    content-box;
+	box-sizing:         content-box;
+}
+
+input[type="search"]::-webkit-search-decoration { /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner { /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border: 0;
+	padding: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus { 
+        border:solid 1px #75CBF0; /*rubric*/
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"] {
+	padding: 3px;
+}
+
+textarea {
+	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding-left: 3px;
+	vertical-align: top; /* Improves readability and alignment in all browsers */
+	width: 100%;
+}
+
+input[type="submit"] {
+	font-family: "Mission-Script", cursive;
+    background: #F45747; /*rubric*/
+    border: none;
+    box-shadow: none;
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 10px 19px;
+    vertical-align: middle;
+    }
+
+input[type="submit"] {/* This might seem fucking odd, but it's the only way to make iOS behave like a not retard */
+-webkit-appearance: none;
+}
+
+input[type="submit"]:hover{
+    background: #ED524A;    /*rubric*/
+    -webkit-transition: background-color .25s ease-out;
+    -moz-transition: background-color .25s ease-out;
+    -o-transition: background-color .25s ease-out;
+    transition: background-color .25s ease-out;
+  }
+  
+select, select:focus {
+    outline: none;
+    border: none;
+    }
+
+.contact-form select{
+    margin-bottom: 0 !important;
+    }
+    
+.stupid-easy-paleo-select {
+    background: #20ADEA;
+    color: #ffffff;
+    border: none;
+    box-sizing: border-box;
+    box-shadow: none;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 19px;
+    width: 150px;
+}
+
+.stupid-easy-paleo-select:hover {
+    background: #48BBED;    /*rubric*/
+    -webkit-transition: background-color .25s ease-out;
+    -moz-transition: background-color .25s ease-out;
+    -o-transition: background-color .25s ease-out;
+    transition: background-color .25s ease-out;
+}
+
+.stupid-easy-paleo-select, .stupid-easy-paleo-select select {
+    color: #ffffff;
+}
+
+.stupid-easy-paleo-select select {
+    background: transparent;
+    border: none;
+    /*hide default down arrow in webkit */
+    -webkit-appearance: none;
+    -o-appearance: none !important;
+}
+
+.icon-arrow-down4 {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 24px;
+    }
+
+@-moz-document url-prefix(){
+  .stupid-easy-paleo-select select {
+  width: 200%;
+  }
+}
+
+ select::-ms-expand {
+    display: none;
+} /* hide default down arrow in IE10*/
+
+/* hack to fall back in opera */
+_:-o-prefocus, .selector {
+  .stupid-easy-paleo-select {
+  background: none;
+  }
+}
+
+
+.widget_search input[type="search"] {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+5.0 Navigation
+--------------------------------------------------------------*/
+
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		font-size: 100%;
+		opacity: .85;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+	}
+	.main-navigation ul {
+		margin: 0;
+		text-indent: 0;
+		background: #ffffff;
+		text-align: left;
+	}
+	.main-navigation li a,
+	.main-navigation li {
+		display: inline-block;
+		text-decoration: none;
+		color: #404040;
+	}
+	.main-navigation li a {
+		border-bottom: 0;
+		line-height: 3.5;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+	
+	.main-navigation li a:hover {
+		color: #20AFEA;
+	}
+	
+	.main-navigation li {
+		margin: 0 18px 0 18px;
+		position: relative;
+		z-index: 6;
+	}
+	.main-navigation li ul {
+		display: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		top: 100%;
+		z-index: 1;
+	}
+	.main-navigation li ul ul {
+		top: 0;
+		left: 100%;
+	}
+	.main-navigation ul li:hover > ul {
+		border-left: 0;
+		display: block;
+	}
+	.main-navigation li ul li a {
+		display: block;
+		line-height: 2.181818182;
+		padding: 8px 10px;
+		width: 180px;
+		white-space: normal;
+	}
+	.main-navigation li ul li a:hover {
+		color: #000;
+	}
+	.main-navigation .current-menu-item > a,
+	.main-navigation .current-menu-ancestor > a,
+	.main-navigation .current_page_item > a,
+	.main-navigation .current_page_ancestor > a {
+		color: #636363;
+		font-weight: bold;
+	}
+
+/*Book Menu Item*/
+
+	.cookbook {
+		padding-right: 2px;
+		padding-left: 2px;
+		background-color: #20AFEA;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	.cookbook a {
+		color: #ffffff;
+	}
+	
+	.cookbook:hover{
+		background-color: #F45747;
+	}
+/*--------------------------------------------------------------
+5.1 Links
+--------------------------------------------------------------*/
+a {
+	color: #20AFEA;
+	text-decoration: none;
+	outline: 0 !important;
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: underline;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;    
+}
+
+
+.entry-title a {
+	color: #20AFEA;
+}
+
+.entry-title a:hover {
+	color: #404040;
+	text-decoration: none;
+	-webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+
+/*--------------------------------------------------------------
+5.2 Menus
+--------------------------------------------------------------*/
+
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+		display: inline-block;
+	}
+	
+.menu-toggle {
+	border: 0;
+	border-radius: 0;
+	cursor: pointer;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	top: 0;
+	right: 0;
+	text-align: center;
+	background: #ffffff;
+	width: 100%;
+}
+
+.toggle-banter {
+	font-family: "Refrigerator-deluxe", sans-serif;
+	padding-right: 3px;
+}
+
+.icon-fallback-text .text {
+/* a generic way to visually hide content while remaining accessible to screen readers (h5bp.com) */
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+	position: absolute;
+	height: 1px;
+	width: 1px;
+}
+
+.menu-toggle:after {
+	display: none;
+}
+
+.main-navigation ul {
+		display: none;
+	}
+	
+.author-bio {
+	clear: both;
+}
+
+.author-bio img {
+	margin: 2em;
+}
+
+.author-description {
+	padding: 2em;
+}
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+6.0 Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+7.0 Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 0 auto;
+}
+
+/*--------------------------------------------------------------
+8.0 Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+#hero.widget {
+	margin: 0;
+}
+
+.widget{
+	margin: 0;
+	list-style: none;
+}
+
+#hero h2{
+	text-transform: uppercase;
+	font-size: 1.25em;
+	font-weight: 300;
+	text-align: center;
+}
+
+/* Make sure select elements fit in widgets */
+.widget select {
+	max-width: 100%;
+}
+
+/* Search widget */
+.widget_search .search-submit {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+header#masthead{
+	position: fixed;
+	z-index: 999;
+}
+
+.logo {
+    float:left;
+    position:relative;
+    z-index: 6;
+    max-width: 10%;
+	-ms-interpolation-mode: bicubic;
+	margin: .2em 0 0 .2em;
+}
+
+.site-header {
+	position: fixed;
+	width: 100%;
+	height: 1%;
+    }
+
+h1.site-title{
+	margin-bottom: 0;
+    }
+
+.site-title a {
+    color: #ffffff;
+    }
+    
+    .site-description {
+    color: #75CBF0;
+    }
+    
+.site-description {
+    float: left;
+}
+
+.site-content { /* The whole fucker */
+	margin: 0 auto 53px;
+	width: 85%;	
+	padding-top: 1.4375%;
+	max-width: 1800px;
+}
+
+.site-content article {
+    word-wrap: break-word;
+    margin-bottom: 5em;
+}
+
+#primary { /* The main blog fucker */
+	margin: 36px auto;
+	width: 93.75%; /* 900px / 960px */  
+}
+
+.site-main { /*blog guts */
+	float:left;
+	width: 75%; /* 566px/ 900px */
+}
+
+.hhhtk-main {
+	float: none;
+	width: 100%;
+}
+
+.social ul{
+	display: inline-block;
+	font-size: 2em;
+	margin-bottom: .5em;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+.social li{
+	display: inline;
+	/*padding: .1em; ONLY IF HTML IS BEING MINIFIED*/
+}
+
+.social li a{
+	color: #404040;
+	}
+
+.social li a:hover{
+	color: #333333;
+	text-decoration: none;
+	}
+
+#secondary { /* main widget fucker */
+	float: right;
+	width: 21%; /* 331px / 900px */
+	/*position: relative;*/
+	z-index: 1;
+}
+
+.widget-area { /*widget guts */
+	margin: 0 auto;
+	width: 69.7885196%; /* 231px / 331px */
+}
+
+.widget-area img{ /*widget guts */
+	width: 100%;
+	max-width: 400px;
+}
+
+
+.entry-summary {
+	margin-top: 0;
+}
+.entry-footer {
+	float: right;
+	margin: 0;
+    padding-left: 10px;
+    vertical-align: bottom;
+}
+
+.site-footer {
+	background-color: #404040;
+	color: #ffffff;
+	text-align: center;
+}
+.site-info {
+	clear:both;
+	width: 100%;
+	color: #666666;
+	font-size: .75em;
+	margin-bottom: 2%;
+}
+
+.menu-footer-container ul li{
+	padding: 5px;
+}
+
+.site-footer .social li a, .menu-footer-container ul li a{
+	color: #666666;
+	}
+
+.site-footer .social li a:hover,.menu-footer-container ul li a:hover{
+	color: #ffffff;
+	text-decoration: none;
+	}
+	
+.site-info a{
+	color: #666666;
+}
+
+.site-info a:hover{
+		color: #ffffff;
+}
+
+.sharing,
+.disclosure {
+  max-width: 80%;
+  margin: auto;
+}
+
+.menu-footer-container ul li{
+	display:inline-block;
+}
+
+.badge {
+  border-radius:50%;
+  text-align:center;
+  line-height:0;
+  background: #ffffff;
+  color: white;
+  height: 200px;
+  width: 200px;
+  display:inline-block;
+  border: 10px solid #404040;
+  padding-top: 80px;
+  margin:0 100px 0 100px;
+}
+
+.cta {
+	width:100%;
+	/*background-color: black;*/
+	text-align: center;
+	font-size: 8rem;
+}
+
+.cta span {
+	color: #404040;
+}
+
+.cta h2 {
+	font-family: "Refrigerator-deluxe",sans-serif !important;
+	font-size: 3rem !important;
+	background: #404040;
+	color: #ffffff !important;
+	transform: rotate(-11deg);
+    -webkit-transform: rotate(-11deg);
+    -moz-transform: rotate(-11deg);
+    border-top: 8px solid #404040;
+    border-bottom: 12px solid #404040;
+    margin-top:-135px;
+}
+
+.cta h2:before, .cta h2:after {
+
+   content: '';
+   position: absolute;
+   display: block;
+   bottom: -12px;
+   border: 7px solid #404040;
+   border-top-width: 25px;
+   border-bottom-width: 25px;
+   border-left-width: 30px solid #404040;
+   border-right-width: 30px solid #404040;
+   z-index: -1;
+}
+
+.cta h2:before {
+   left: -30px;
+   border-right-width: 24px;
+   border-left-color: transparent;
+}
+
+.cta h2:after {
+   right: -20px;
+   border-left-width: 24px;
+   border-right-color: transparent;
+}
+
+.trolley {
+    float: right;
+    margin-right: 2%;
+    line-height: 1.5;
+    position: relative;
+    z-index: 3;
+    letter-spacing: .25em;
+    font-size: 1.5em;
+    background: #20afea;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 8px;
+		}
+
+.trolley a{
+	color: #ffffff;
+	text-decoration: none;
+	}
+
+.cart-contents {
+	padding:5px;
+}
+
+ul.asseen{
+	text-align: center;
+}
+
+ul.asseen li {
+	list-style: none;
+	display: inline;
+}
+
+ul.asseen li a {
+	
+}
+
+ul.asseen a img {
+	max-height: 70px;
+    max-width: 120px;
+    padding: 10px;
+    vertical-align: middle;
+    /*-khtml-filter: grayscale(1);
+	-moz-filter: grayscale(1);
+	-o-filter: grayscale(1);
+	-ms-filter: grayscale(1);*/
+	-webkit-filter: grayscale(1); 
+	filter: grayscale(1);
+	opacity: .5;
+	background-color: #fbfbfb;
+}
+
+ul.asseen a img:hover {
+	opacity: 1;
+	-webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#left {
+	float: left;
+}
+
+#right {
+	float: right;
+}
+
+#left, #right {
+    text-align: center;
+    margin-top: 2%;
+    width: 50%;
+    clear: none;
+}
+
+
+
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+	background: #ffffff;
+	padding-top: 4em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.byline {
+	padding-left: 10px;
+	display: none;
+}
+
+span.author.vcard {
+	font-family: "Mission-Script", cursive;
+	font-size: 19px;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.posted-on, .cat-links, .tags-links {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
+10.2 Asides
+--------------------------------------------------------------*/
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+11.0 Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .paging-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+12.0 Media
+--------------------------------------------------------------*/
+@media screen and (min-width: 320px) and (max-width:480px) {
+body, input, select, textarea {
+    font-size: 15px;
+    }
+    
+.social {
+    text-align: center;
+}
+
+#hero h2 {
+        display: none;
+    }
+    
+#hero .widget .asseen {
+        display: none;
+}
+
+#hero .wp-caption-text {
+    font-size: 1em !important;
+    padding: 0 5px 0 0 !important;
+ }
+ 
+ .hentry {
+	 padding-top: 0;
+ }
+
+.logo {
+	max-width: 20%;
+	position: relative;
+	z-index: 6;
+	padding: 0;
+	margin:0;
+}
+
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		margin-top: -13%;
+		padding-top: 8%;
+		opacity: .85;
+		text-align: center;
+		}
+
+
+.menu-toggle {
+	text-align: right;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right:2%;
+	position: absolute;
+	z-index: 1;
+	}
+
+.trolley {
+	display: none;
+	}
+
+#secondary {
+	z-index: -1;
+}
+
+}
+
+@media screen and (min-width: 320px) and (max-width:568px) { /*safari seems to dislike using a , */
+body, input, select, textarea {
+    font-size: 15px;
+}
+
+.site-main, .widget-area {
+	float: none;
+    margin: 0 !important;
+    width: 100% !important;
+ }
+ 
+ .hentry {
+	 padding-top: 0;
+ }
+
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		margin-top: -13%;
+		padding-top: 8%;
+		opacity: .90;
+		text-align: center;
+		line-height: 4em;
+		}
+
+#left, #right {
+	width: 100%;
+}
+
+.logo {
+	max-width: 20%;
+	position: relative;
+	z-index: 6;
+	padding: 0;
+	margin:0;
+}
+
+.menu-toggle {
+	text-align: right;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right:2%;
+	position: absolute;
+	z-index: 1;
+	}
+
+.trolley {
+	display: none;
+	}
+
+
+ .alignleft {
+	max-width: 30% !important;
+}
+
+ .alignleft#htkpic {
+ max-width: 100% !important;
+}
+
+#secondary {
+	z-index: -1;
+}
+#hero h2 {
+        display: none;
+    }
+    
+#hero .widget .asseen {
+        display: none;
+}
+
+#hero .wp-caption-text {
+    font-size: 1em !important;
+    padding: 0 5px 0 0 !important;
+ }
+
+}
+
+@media screen and (min-width: 481px) and (max-width:600px) {
+	
+	#hero h2 {
+        display: none;
+    }
+    
+.hentry {
+	 padding-top: 0;
+ }
+    
+#hero .widget .asseen {
+        display: none;
+}
+	#hero .wp-caption-text {
+    font-size: 1.2em !important;
+ }
+
+}
+
+@media screen and (min-width: 569px) and (max-width:600px) {
+
+.logo {
+	max-width: 20%;
+	position: relative;
+	z-index: 6;
+	padding: 0;
+	margin:0;
+}
+
+.hentry {
+	 padding-top: 0;
+ }
+
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		margin-top: -13%;
+		padding-top: 8%;
+		text-align: center;
+	}
+
+#hero h2 {
+        display: none;
+    }
+    
+#hero .widget .asseen {
+        display: none;
+}
+
+.menu-toggle {
+	text-align: right;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right:2%;
+	position: absolute;
+	z-index: 1;
+	}
+
+.trolley {
+	display: none;
+	}
+	
+.site-main, .widget-area {
+	float: none;
+    margin: 0 !important;
+    width: 100% !important; 
+
+}
+#secondary {
+	z-index: -1;
+}
+}
+
+@media screen and (min-width: 601px) and (max-width: 767px) {
+
+.menu-toggle {
+	text-align: right;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right:2%;
+	position: absolute;
+	z-index: 1;
+}
+
+.hentry {
+	 padding-top: 0;
+ }
+
+.trolley {
+	display: none;
+	}
+
+
+.site-main, .widget-area {
+	float: none;
+    margin: 0 !important;
+    width: 100% !important; 
+}
+#secondary {
+	z-index: -1;
+}
+
+#hero h2 {
+        display: none;
+    }
+    
+#hero .widget .asseen {
+        display: none;
+}
+#hero .wp-caption-text {
+    font-size: 1.7em !important;
+}
+
+.social ul{
+	font-size: 1.5em !important;
+}
+
+}
+@media screen and (min-width: 768px) and (max-width: 799px) {
+	
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		font-size: .55em;
+		text-align: center;
+		line-height: 5em;
+		}
+
+.hentry {
+	 padding-top: 0;
+ }
+		
+.trolley {
+	line-height: 2.5em;
+	padding-left: 6px;
+	font-size: 1em;
+	}
+
+.social {
+	font-size: 1.3em !important;
+}
+
+#hero h2 {
+        display: none;
+    }
+    
+#hero .widget .asseen {
+        display: none;
+}
+
+#hero .wp-caption-text {
+    font-size: 1.7em !important;
+    padding: 5px !important;
+}
+
+.social ul{
+	font-size: 0.8em !important;
+}
+}
+
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+	
+.main-navigation ul.nav-menu,
+	.main-navigation div.nav-menu > ul {
+		font-size: .6em;
+		text-align: center;
+		line-height: 4.5em;
+		}
+		
+.trolley {
+	line-height: 2.5em;
+	font-size: 1em;
+	}
+
+.social ul{
+	font-size: 1.5em !important;
+}
+
+.hentry {
+	 padding-top: 1em;
+ }
+
+#hero .wp-caption-text {
+    font-size: 1.7em !important;
+    }	
+}
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+#hero .wp-caption,
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter,
+.wp-caption.alignnone {
+   position:relative;
+   z-index: 1;
+}
+  
+#hero .wp-caption-text {
+    color: #ffffff;
+    font-family: "Refrigerator-deluxe",sans-serif;
+    font-size: 3.5em;
+    font-weight: bold !important;
+    left: 60%;
+    text-align: right;
+    top: 0;
+    position:absolute;
+    padding:10px;
+    text-transform: uppercase;
+    line-height: 1.2;
+ }
+
+.wp-caption {
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 0 auto;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+13.0 - VIRUS FUCKING PLUGINS
+--------------------------------------------------------------*/
+.easyrecipe div, .easyrecipe li, .easyrecipe ol, .easyrecipe p, .easyrecipe span, .easyrecipe ul, content .easyrecipe .ERSIngredients li.ingredient, .easyrecipe .ERSIngredients li.ingredient {
+	font-family: "proxima-nova",sans-serif !important;
+}
+
+.easyrecipe .ERSName, .easyrecipe .ERSIngredients .ERSIngredientsHeader, .easyrecipe .ERSInstructions .ERSInstructionsHeader, .easyrecipe .nutrition .ERSNutritionHeader, .easyrecipe div .ERSNotesHeader{
+	font-family: "Refrigerator-deluxe",sans-serif !important;
+	font-size: 1.5em !important;
+}
+
+/*div.easyrecipe div.ERSSavePrint span.ERSPrintBtnSpan a.ERSPrintBtn span.ERSPrintIcon {} /* sorta works needs fucking fixed ths plugin is shitHOUSE */
+
+div.easyrecipe { /* CUNT CUNT CUNT CUNT CUNT CUNT */
+     background: none !important;
+     border: 1px dashed #404040;
+     clear: both;
+     font-family: Arial,Helvetica,sans-serif;
+     font-feature-settings: normal;
+     font-kerning: auto;
+     font-language-override: normal;
+     font-size-adjust: none;
+     font-stretch: normal;
+     font-style: normal;
+     font-synthesis: weight style;
+     font-variant: normal;
+     font-weight: normal;
+     line-height: normal;
+     margin-top: 10px;
+     padding: 1em;
+ }
+ 
+ .easyrecipe .ERSHead {
+     float: left;
+     margin-right: 20px;
+}
+
+.easyrecipe .ERSDetails {
+     margin-bottom: 10px;
+}
+
+.easyrecipe .ERSSummary {
+     margin-bottom: 10px;
+}
+
+desc-pro-gfcr {
+	font-family: "Refrigerator-deluxe",sans-serif !important;
+}
+
+popupally-pro-form-submit submit-pro-gfcr {
+	font-family: "Mission-Script",cursive !important;
+}
+
+/*--------------------------------------------------------------
+HHHTK Font Icon Pillars, Sections & Template
+--------------------------------------------------------------*/
+.HHHTK { /*HEATHLY HAPPY HARDER TO KILL SINGLE PAGE TEMPLATE*/
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2em;
+}
+
+@media only screen and (min-width: 1400px) {
+
+.HHHTK { /*HEATHLY HAPPY HARDER TO KILL SINGLE PAGE TEMPLATE*/
+	padding: 0 6em !important;
+}
+}
+
+/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+div.section.group {
+  text-align: center;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+/*  GRID OF FOUR  */
+.span_4_of_4 {
+	width: 100%;
+}
+.span_3_of_4 {
+	width: 74.6%;
+}
+.span_2_of_4 {
+	width: 49.2%;
+}
+.span_1_of_4 {
+	width: 23.8%;
+}
+
+@media only screen and (max-width: 413px) {
+	
+	section.coral,
+	section.teal,
+	section.mint,
+	section.grey,
+	section.charcoal {
+	padding: .5em !important;
+}
+
+button.htk {
+    min-width: 75px !important;
+    min-height: 75px !important;
+    font-size: inherit !important;
+    padding: 1em !important;
+}
+
+.fa-ul {
+  padding: .2em !important;
+}
+
+
+}
+
+.fa-ul {
+  display: table;
+  margin: 0 auto;
+  padding: 2em ;
+}
+
+section.box.fa{
+  color: grey;
+}
+
+section.coral,
+section.teal,
+section.mint,
+section.grey,
+section.charcoal,
+section.box	{
+	padding: 2em;
+}
+
+section.coral,
+section.teal,
+section.mint,
+section.charcoal {
+	color: #fff;
+}
+
+section.box {
+  border: 2px solid #f1f1f1;
+}
+
+section.coral {
+	background: #F45747;
+	}
+
+section.teal{
+	background: #067887;
+	}
+
+section.mint{
+	background: #A4EDD9;
+	}
+
+section.grey{
+	background: #f1f1f1;
+	color: #404040;
+	}
+
+section.charcoal{
+	background: #404040;
+	}
+
+button.htk {
+	background: #20afea;
+	border: 2px solid #20afea;
+	color: #fff;
+  	padding: .75em;
+  	min-width: 250px;
+  	min-height: 85px;
+  	font-size: 1.5em;
+  	text-transform: uppercase;
+}
+
+.htk a{
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+
+.htk a:hover,
+.htk a:active,
+.htk a:focus {
+  	color: #20afea;
+  	outline: none;
+}
+
+button.htk:hover,
+button.htk:active,
+button.htk:focus {
+	outline: none;
+  cursor: pointer;
+  background: #fff;
+  color: #20afea;
+   -webkit-transition: background-color .25s ease-out;
+    -moz-transition: background-color .25s ease-out;
+    -o-transition: background-color .25s ease-out;
+    transition: background-color .25s ease-out;
+  
+  s, strike, del {
+    color: #F45747 !important;
+}
+
+/* Font Awesome HTK Edits */
+
+i.fa.fa-cutlery.fa-2x,
+i.fa.fa-trophy.fa-2x,
+i.fa.fa-battery-full.fa-2x,
+i.fa.fa-smile-o.fa-2x {
+	padding: .3em !important;
+	border: 4px solid black !important;
+	border-radius: .3em !important;
+	margin:0 .3em !important;
+}
+
+/* Sensei Shit */
+
+span.progress.statement.course-completion-rate,
+div.meter.green,
+div.status.in-progress {
+	display: none !important;
+}
+
+#my-courses .register-link {
+  clear: both;
+}
+#my-courses form#loginform {
+  width: 50%;
+}
+#my-courses form#loginform label {
+  display: block;
+}
+#my-courses form#loginform input[type="text"], #my-courses form#loginform input[type="password"] {
+  width: 90%;
+}
+#my-courses.ui-tabs {
+  position: relative;
+  zoom: 1;
+}
+#my-courses.ui-tabs .ui-tabs-nav {
+  margin: 0 0 10px !important;
+  float: left;
+  width: 100%;
+  padding: .2em 0 0;
+}
+#my-courses.ui-tabs .ui-tabs-nav li {
+  list-style: none;
+  float: left;
+  position: relative;
+  top: 1px;
+  margin: 0 .2em 1px 0;
+  border-bottom: 0 !important;
+  padding: 0;
+  white-space: nowrap;
+}
+#my-courses.ui-tabs .ui-tabs-nav li a {
+  float: left;
+  padding: 5px 20px;
+  font-weight: bold;
+  color: #777;
+  text-decoration: none;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-tabs-selected {
+  margin-bottom: 0;
+  padding-bottom: 1px;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-tabs-selected a {
+  cursor: text;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-state-hover a {
+  color: #555;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-state-active a {
+  color: #333;
+  background: #e2e2e2;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-state-disabled a {
+  cursor: text;
+}
+#my-courses.ui-tabs .ui-tabs-nav li.ui-state-processing a {
+  cursor: text;
+}
+#my-courses.ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
+  cursor: pointer;
+}
+#my-courses.ui-tabs .ui-tabs-panel {
+  clear: both;
+  display: block;
+  border-width: 0;
+  padding: 1em 0;
+  background: none;
+}
+#my-courses.ui-tabs .ui-tabs-hide {
+  display: none !important;
+}
+
+/* Course Progress Bars */
+.meter {
+  height: 25px;
+  /* Can be anything */
+  position: relative;
+  margin: 20px 0;
+  /* Just for demo spacing */
+  background: #ededed;
+  border-radius: 25px;
+  clear: both;
+}
+.meter > span {
+  display: block;
+  padding: 1px 10px 0 0;
+  height: 100%;
+  background-color: #63a95f;
+  position: relative;
+  overflow: hidden;
+  text-align: right;
+  color: #fff;
+  min-width: 45px;
+  font-weight: bold;
+  border-radius: 20px;
+  /* Safari/Chrome, other WebKit */
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+.meter.orange > span {
+  background: #d3d3d3;
+}
+.meter.red > span {
+  background: #ed6c6c;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1.618em 1em 0;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1em 1.618em;
+}
+
+.aligncenter {
+  display: block;
+  text-align: center;
+  margin: 0 auto 1.618em;
+}
+
+.nav-next, .nav-prev {
+  width: auto !important;
+}
+
+.nav-next {
+  float: right;
+}
+.nav-next .meta-nav:before {
+  content: "\2192";
+}
+
+.nav-prev {
+  float: left;
+}
+.nav-prev .meta-nav:before {
+  content: "\2190";
+}
+
+/* Course Archives */
+.sensei-ordering {
+  margin: 0 0 1em 0;
+}
+
+.sensei-course-filters {
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+.sensei-course-filters li {
+  float: left;
+  list-style: none;
+}
+.entry-content .sensei-course-filters li {
+  margin: 0;
+}
+.sensei-course-filters li a {
+  display: block;
+  border: 2px solid #ddd;
+  margin-right: 5px;
+  padding: 0.5em 1em;
+  background: #eee;
+}
+.sensei-course-filters li a:hover {
+  background: #fff;
+  text-decoration: none;
+  border-color: #ccc;
+}
+.sensei-course-filters li a.active {
+  border-color: #ddd;
+  background: #fff;
+  cursor: default;
+}
+
+.course-container {
+  margin: 0 0 4.236em;
+}
+.course-container .archive-header {
+  border: none;
+  padding: 0;
+}
+.course-container .archive-header h1 {
+  margin: 0;
+  padding: 0 0 .53em;
+  border: none;
+  font-size: 1.387em;
+  color: #333;
+  border-bottom: 2px solid #e6e6e6;
+  width: 100%;
+}
+.course-container .navigation {
+  float: right;
+  margin: -10px 0 0;
+  text-align: right;
+}
+.course-container .navigation a {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+/* Course Results */
+.course-results-lessons h2 {
+  margin: 20px 0;
+}
+.course-results-lessons h2.total-grade {
+  text-decoration: underline;
+}
+.course-results-lessons h2.total-grade .lesson-grade {
+  text-decoration: underline;
+}
+.course-results-lessons h2 .lesson-grade {
+  float: right;
+}
+
+/* Buttons */
+.sensei-course-filters,
+ul.course-container {
+  list-style: none;
+}
+
+/* Widget */
+.widget.widget_sensei_course_progress {
+  padding: 0;
+  background: transparent !important;
+  border-radius: 5px;
+}
+.widget.widget_sensei_course_progress header {
+  padding: 1.618em 1.618em 0;
+}
+.widget.widget_sensei_course_progress header h2 {
+  font-size: 1.618em;
+  margin-bottom: 0.618em;
+}
+.widget.widget_sensei_course_progress header h2 a {
+  text-decoration: none;
+}
+.widget.widget_sensei_course_progress header h3 {
+  padding-bottom: 0.618em;
+  margin-bottom: 0.168em;
+  border: none;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons {
+  list-style: none;
+  clear: both;
+}
+#sidebar .widget.widget_sensei_course_progress .course-progress-lessons {
+  margin: 0;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-module {
+  border: none;
+  border-bottom: none !important;
+  margin: 0;
+  padding: 0.618em 1.618em 0.618em 1em;
+  background: rgba(255, 255, 255, 0.6);
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-module h3 {
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson a, .widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson span {
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.618em 1.618em 0.618em 3.618em;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson a:before, .widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson span:before {
+  font-family: 'Fontawesome';
+  display: inline-block;
+  font-size: 150%;
+  margin-right: 0.618em;
+  font-weight: 400;
+  line-height: 1em;
+  width: 1em;
+  position: absolute;
+  left: 1em;
+  top: 0.5em;
+  content: '\f10c';
+  color: rgba(0, 0, 0, 0.1);
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson a:hover {
+  background: white;
+  text-decoration: none;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson:first-child a, .widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson:first-child span {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.current span {
+  background: white;
+  color: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.current span:before {
+  content: '\f138';
+  color: rgba(0, 0, 0, 0.2);
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.completed a, .widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.completed span {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: normal;
+}
+.widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.completed a:before, .widget.widget_sensei_course_progress .course-progress-lessons .course-progress-lesson.completed span:before {
+  content: '\f058';
+  color: #63a95f;
+}
+
+.widget ul.course-progress-navigation {
+  border-top: none !important;
+}
+.widget ul.course-progress-navigation li {
+  width: 50%;
+  text-align: center;
+  list-style: none;
+}
+.widget ul.course-progress-navigation li a {
+  display: block;
+  padding: 1em 0;
+  color: #ccc;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+.widget ul.course-progress-navigation li a span {
+  display: none;
+}
+.widget ul.course-progress-navigation li a:hover {
+  background: #fff;
+  text-decoration: none;
+}
+.widget ul.course-progress-navigation li a:before, .widget ul.course-progress-navigation li a:after {
+  font-family: 'Fontawesome';
+  font-weight: bold;
+  font-size: 2em;
+  position: relative;
+  top: 3px;
+}
+.widget ul.course-progress-navigation li.prev {
+  float: left;
+}
+.widget ul.course-progress-navigation li.prev a {
+  border-right: none;
+}
+.widget ul.course-progress-navigation li.prev a:before {
+  content: "\f053";
+}
+.widget ul.course-progress-navigation li.next {
+  float: right;
+}
+.widget ul.course-progress-navigation li.next a:after {
+  content: "\f054";
+}
+
+/*SENSEI HACK FOR BUG */
+div#sensei-bug.sensei-message.info {
+	visibility: hidden !important;
+}
