@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/glasgowshipyard/healthcodex.svg?branch=master)](https://travis-ci.org/glasgowshipyard/healthcodex)
+[![Build Status](https://travis-ci.org/glasgowshipyard/stupid-easy-paleo.svg?branch=master)](https://travis-ci.org/glasgowshipyard/stupid-easy-paleo)
 
 ## Glasgow Shipyard
 
